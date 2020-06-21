@@ -29,17 +29,17 @@ let buttonsArray = document.querySelectorAll(".answerBtn");
                 currentQuestionIndex++
             }
 
-            if (
-                (answer === true && questions[i].a === 't') ||
-                (answer === false && questions[i].a === 'f')
-              ) {
-                // Increase score
-                score++;
-                document.getElementById("answerCorrect").innerHTML = "Correct!";
+            // if (
+            //     (answer === true && questions[i].a === 't') ||
+            //     (answer === false && questions[i].a === 'f')
+            //   ) {
+            //     // Increase score
+            //     score++;
+            //     document.getElementById("answerCorrect").innerHTML = "Correct!";
                 
-              } else {
-                document.getElementById("answerCorrect").innerHTML = 'Wrong!';
-              }
+            //   } else {
+            //     document.getElementById("answerCorrect").innerHTML = 'Wrong!';
+            //   }
         });
     });
 
