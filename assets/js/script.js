@@ -12,65 +12,45 @@ var questions = [
     { q: 'Assignment operators are used to perform mathematical calculations, such as addition, subtraction, multiplication, and division.', a: 'f' },
     { q: 'In an infinite loop, a loop statement never ends because its conditional expression is never truthy.', a: 'f' }
 ];
+console.log(questions);
 
 // We start the game with a score of 0.
 var score = 0;
 
 
 let buttonsArray = document.querySelectorAll(".answerBtn");
-    buttonsArray.forEach(function(elem) {
-        elem.addEventListener("click", function(){
-            var question = document.getElementById("questionText");
-            question.innerHTML = questions[currentQuestionIndex].q;
-            var answer = elem.id
-            console.log(answer);
-        
-            if (questions.length > currentQuestionIndex){
-                currentQuestionIndex++
+buttonsArray.forEach(function(elem) {
+    elem.addEventListener("click", function(){
+        var question = document.getElementById("questionText");
+        question.innerHTML = questions[currentQuestionIndex].q;
+        var answer = elem.id
+        console.log(questions[currentQuestionIndex]);
+    
+        if (
+            (answer === "true" && questions[currentQuestionIndex].a === 't') ||
+            (answer === "false" && questions[currentQuestionIndex].a === 'f')
+            ) {
+            // Increase score
+            score++;
+            document.getElementById("answerCorrect").innerHTML = "Correct!";
+            
+            } else {
+                document.getElementById("answerCorrect").innerHTML = 'Wrong!';
             }
 
-            // if (
-            //     (answer === true && questions[i].a === 't') ||
-            //     (answer === false && questions[i].a === 'f')
-            //   ) {
-            //     // Increase score
-            //     score++;
-            //     document.getElementById("answerCorrect").innerHTML = "Correct!";
-                
-            //   } else {
-            //     document.getElementById("answerCorrect").innerHTML = 'Wrong!';
-            //   }
-        });
+            if (questions.length > currentQuestionIndex){
+            currentQuestionIndex++
+        }
     });
+});
 
 
 var startQuiz = function(){   
-    
-  // Loop over every question object
-  for (var i = 0; i < questions.length; i++) {
-    // Display current question to user and ask OK/Cancel
-    //var answer = (questions[i].q);
-    
-    
-    // var question = document.createElement("h3");
-    // question.innerHTML = questions[i].q;
-    // questionDiv.appendChild(question);
-
-    var answer = questions[i].a;
-    // Compare answers
-    if (
-      (answer === true && questions[i].a === 't') ||
-      (answer === false && questions[i].a === 'f')
-    ) {
-      // Increase score
-      score++;
-      document.getElementById("answerCorrect").innerHTML = "Correct!";
-      
-    } else {
-      document.getElementById("answerCorrect").innerHTML = 'Wrong!';
-    }
-  }
+    currentQuestionIndex = 0;
+    var question = document.getElementById("questionText");
+    question.innerHTML = questions[currentQuestionIndex].q;
 }
+
 
 // Show total at end
 document.getElementById('main').innerHTML = 'You got ' + score + '/' + questions.length;
