@@ -1,0 +1,22 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.buttons, .answerBtn {
+    background: darkcyan;
+    color: white;
+    border-radius: 3px;
+    border-color: darkcyan;
+    width: 25%;
+    height: 50px;
+    font-weight: bold;
+}
+
+.saveButton {
+    height:25px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 3px;
+    border-width: 0.5px;
+}

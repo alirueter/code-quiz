@@ -8,19 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="welcome">Welcome to Code Quiz!</h1>
+        <h1 class="welcome" id="welcome">Welcome to Code Quiz!</h1>
         <p>You will be asked 5 true/false questions about JavaScript. If you answer a question incorrectly, 15 seconds will be deducted from your timer. Good luck!</p>
-        <button id="startBtn">Start</button>
+        <button id="startBtn" class="buttons">Start</button>
         <h2 id="countdown"></h2>
-        <p id="main"></p>
     </div>
     <div id="questions">
         <h3 id="questionText"></h3>
         <button id="true" class="answerBtn">True</button>
         <button id="false" class="answerBtn">False</button>
         <p id=answerCorrect></p>
-        <h4 id="countdown"></h4>
+     
     </div>
+    <h4 id="quizScore"></h4>
+    <div id="highscoreInput"></div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
